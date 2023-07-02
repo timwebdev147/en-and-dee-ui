@@ -15,6 +15,7 @@
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
     "emoji-mart": "^5.5.2",
+    "fetch-node": "^0.0.1",
     "next": "13.3.0",
     "next-redux-wrapper": "^8.1.0",
     "postcss": "8.4.22",
