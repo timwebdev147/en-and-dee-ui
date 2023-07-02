@@ -1,0 +1,104 @@
+@use './mediaQueries.modules.scss';
+ /* define primary colors */
+ $primary_1: white;
+ $primary_2: #b2ad7f;
+ $text_color: #E92626;
+ $primary_3: #687d80;
+  $green: #4cb034;
+  $greenFade: #4db03445;
+
+.footer{
+    height: 600px;
+    width: 100%;
+    background-color: #f1f8fe;
+    padding: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include mediaQueries.for-phone-only{
+        height: auto;
+        justify-content: flex-start;
+        padding: 30px;
+        padding-top: 50px;
+    }
+    .logoContainer{
+        margin-bottom: 10px;
+        img{
+            @include mediaQueries.for-phone-only{
+                width: 70px;
+            }
+        }
+    }
+    .row{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        @include mediaQueries.for-phone-only{
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .column{
+            width: 25%;
+            @include mediaQueries.for-phone-only{
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            ul{
+                line-height: 2.4;
+                @include mediaQueries.for-phone-only{
+                    line-height: 1.5;
+                }
+                h1{
+                    font-size: 25px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    opacity: 0.8;
+                    @include mediaQueries.for-phone-only{
+                        font-size: 20px;
+                    }
+                }
+                
+                li a{
+                    text-transform: capitalize;
+                    font-size: large;
+                    color: rgba($color: $text_color, $alpha: 1.0);
+                    transition: 0.5s;
+                    &:hover{
+                        transition: 0.5s;
+                        opacity: 0.8;
+                        color: #000;
+                    }
+                    @include mediaQueries.for-phone-only{
+                        font-size: medium;
+                    }
+
+                }
+            }
+            &:first-of-type{
+                h1{
+                    line-height: 1.4;
+                    text-transform: capitalize;
+                    width: 200px;
+                    font-size: 23px;
+                    opacity: 0.5;
+                    @include mediaQueries.for-phone-only{
+                        width: 100%;
+                        opacity: 0.3;
+                    }
+                }
+            }
+            
+        }
+    }
+    .textsContainer{
+        display: flex;
+        justify-content: center;
+        opacity: 0.6;
+        p{
+            width: 80%;
+            font-size: small;
+            text-align: center;
+        }
+    }
+
+}

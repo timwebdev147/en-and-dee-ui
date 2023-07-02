@@ -1,0 +1,228 @@
+$signRed: #CD6262;
+$red: #E92626;
+$signGrey: #fff;
+@use '../../styles/mediaQueries.modules.scss';
+
+
+
+.signup{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    @include mediaQueries.for-phone-only{
+        flex-direction: column;
+        height: auto;
+    }
+    .welcome{
+        width: 30%;
+        background-color: $signRed;
+        background-color: rgb(250, 241, 241);
+        height: 100%;
+        z-index: 3;
+        @include mediaQueries.for-phone-only{
+            width: 100%;
+            height: 240px;
+            padding: 20px 0;
+            // border: 1px solid black;
+        }
+        div{
+            width: 100%;
+            margin-top: 100px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            color: $signGrey;
+            color: black;
+            align-items: center;
+            justify-content: space-between;
+            @include mediaQueries.for-phone-only{
+                height: 200px;
+                // display: none;
+                // border: 1px solid black;
+                margin: 0;
+                img{
+                    // width: 100px;
+                }
+            }
+            
+            h1{
+                font-size: 25px;
+                @include mediaQueries.for-phone-only{
+                    font-size: 20px;
+                }
+            }
+            p{
+                // color: rgba(0, 0, 0, 0.329);
+                text-transform: capitalize;
+                font-size: large;
+                // color: $red;
+                width: 80%;
+                // fontw
+                text-align: center;
+                @include mediaQueries.for-phone-only{
+                    font-size: medium;
+                }
+            }
+        }
+    }
+    
+    .formContainer{
+        width: 70%;
+        position: relative;
+        // min-height: 100%;
+        overflow-y: scroll;
+        // padding-bottom: 100px;
+        background-color: $signGrey;
+        background-color: rgb(250, 241, 241);
+        // background-color: white;
+        display: flex;
+        // padding: 100px 0;
+        flex-direction: column;
+        // border: 1px solid black;
+        // justify-content: center;
+        align-items: center;
+        // .semiCircle{
+        //     width: 200px;
+        //     height: 200px;
+        //     border-radius: 400px;
+        //     background-color: $signRed;
+        //     &:first-of-type{
+        //         position: absolute;
+        //         top: -100px;
+        //         right: -100px;
+        //     }
+        //     &:nth-of-type(2){
+        //         position: absolute;
+        //         bottom: -100px;
+        //         left: -100px;
+        //     }
+        // }
+        @include mediaQueries.for-phone-only{
+            width: 100%;
+            overflow: hidden;
+            height: max-content;
+        }
+        h1{
+            font-size: 18px;
+            font-weight: 600;
+            margin: initial;
+            padding-top: 20px;
+            @include mediaQueries.for-phone-only{
+                // border: 1px solid black;
+                background-color: white;
+                text-align: center;
+                font-size: small;
+                width: 100%;
+            }
+
+        }
+        form{
+            width: 600px;
+            // box-shadow: 2px 2px 10px grey;
+            border-radius: 10px;
+            background-color: white;
+            height: max-content;
+            display: flex;
+            padding: 50px;
+            flex-wrap: wrap;
+            margin: 50px 0;
+            color: rgba(0, 0, 0, 0.803);
+            justify-content: space-between;
+            align-items: center;
+            @include mediaQueries.for-phone-only{
+                width: 100%;
+                margin-top: 0;
+                padding: 50px 20px;
+
+            }
+            >p{
+                color: red;
+                z-index: 3;
+                position: absolute;
+                top: 10px;
+            }
+
+            >div{
+                width: fit-content;
+                // border: 1px solid black;
+                // margin-left: 100px;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                justify-content: space-between;
+                width: 500px;
+                @include mediaQueries.for-phone-only{
+                    width: 100%;
+                }
+                &.halfwidth{
+                    width: 230px;
+                    @include mediaQueries.for-phone-only{
+                        width: 100%;
+                    }
+                }
+                div{
+                    // left: -300px;
+                    // position: absolute;
+                    width: 90%;
+                    margin-left: 10px;
+                    @include mediaQueries.for-phone-only{
+                        width: fit-content;
+                    }
+                }
+                label{
+                    text-transform: capitalize;
+                    font-size: small;
+                    font-weight: bold;
+                    span{
+                        color: red;
+                    }
+                }
+
+                input , select{
+                    background-color: white;
+                    // background-color: #D9D9D9;
+                    // box-shadow: 2px 2px 5px grey;
+
+                    border-radius: 10px;
+                    border: 1px solid rgba(0, 0, 0, 0.305);
+                    height: 50px;
+                    
+                    // width: 500px;
+                    padding: 0 10px;
+                    margin-bottom: 10px;
+                    @include mediaQueries.for-phone-only{
+                        width: 100%;
+                        font-size: small;
+                        height: 40px;
+                        margin-bottom: 5px;
+                    }
+                    
+                    &:focus{
+                        outline: 2px solid red;
+                    }
+                }
+            }
+            button{
+                width: 45%;
+                padding: 10px 25px;
+                color: white;
+                // box-shadow: 2px 2px 5px grey;
+                margin: auto;
+                margin-top: 20px;
+                // border: 2px solid red;
+                border-radius: 30px;
+                background-color: $signRed;
+                font-size: medium;
+
+                 // border: 1px solid black;
+            background-color: rgba($color: $red, $alpha: 0.9);
+            color: white;
+            border-radius: 10px;
+            height: 50px;
+            width: 100%;
+            margin-top: 50px;
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+
+.notLoggedIn{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.dashboard{
+
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: static;
+    .dash_nav{
+        width: 20%;
+        background-color: rgb(255, 255, 255);
+        border-right: 0.1px solid rgba(128, 128, 128, 0.521);
+        box-shadow: 0 4px 8px 1px gray;
+        box-shadow: 1px 3px 7px 4px rgb(247, 230, 230);
+        box-shadow: 0px 3px 10px 1px rgb(128, 128, 128, 0.521);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        padding:10px 20px ;
+        position: sticky;
+        
+        .logo{
+            width: 70px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        p{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            color: #494747;
+            font-weight: 400;
+            transition: 0.5s;
+            font-size: medium;
+            cursor: pointer;
+            box-shadow: 1px 2px 3px 0px rgb(244, 227, 227);
+            border: 1px solid rgb(244, 227, 227);
+            border-radius: 10px;
+            padding: 5px 5px;
+            margin-bottom: 20px;
+            &.active_icon{
+                transition: 0.5s;
+                border-top-right-radius: 50px;
+                border-bottom-right-radius: 0px;
+                box-shadow: 1px 3px 7px 4px rgb(247, 230, 230);
+            }
+            &:hover{
+                transition: 0.5s;
+            box-shadow: 1px 3px 7px 4px rgb(247, 230, 230);
+
+            }
+            &.logout{
+                background-color: #662d65;
+                color: white;
+                box-shadow: none;
+                padding: 15px;
+            }
+            .nav_icon{
+                margin-right: 10px;
+            }
+        }
+    }
+    .dash_view{
+        width: 80%;
+        background-color: rgb(250, 241, 241);
+        height: 100%;
+    }
+}

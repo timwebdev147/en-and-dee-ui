@@ -1,0 +1,187 @@
+.chatboxPrompt{
+    width: 100%;
+    height: 100vh;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.chatbox{
+    width: calc(100%);
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    // .messagesBox{
+        
+    // }
+    .adminMessage{
+        padding: 0 20px;
+        margin-right: auto;
+        display: flex;
+        width: fit-content;
+        flex-direction: column;
+        align-self: flex-start;
+        div{
+            div{
+                p{ 
+                border-radius: 20px;
+                border-top-left-radius: 0;
+                // display: none;
+                    span{
+                        left: 7px;
+
+                    }
+                }
+            }
+        }
+    }
+    .userMessage{
+        padding: 0 20px;
+        margin-left: auto;
+        display: flex;
+        width: fit-content;
+        flex-direction: column;
+        align-self: flex-end;
+        div{
+            div{
+                p{ 
+                border-radius: 20px;
+                border-top-right-radius: 0;
+                // display: none;
+                    span{
+                        right: 7px;
+
+                    }
+                }
+            }
+        }
+    }
+    .myown{
+            align-items: flex-end;
+            :first-child{
+                flex-direction: row-reverse;
+                img{
+                    margin-right: 0;
+                    margin-left: 10px;
+                }
+            }
+        
+    }
+    .messagesBox{
+        height: 100%;
+        &::-webkit-scrollbar{
+            display: none;
+        } 
+        scrollbar-width: none;
+        overflow-y: scroll;
+        h1{
+            text-align: center;
+            margin: auto;
+            margin-top: 200px;
+            opacity: 0.7;
+            font-size: large;
+            width: 200px;
+        }
+        
+    }
+    .textareaBox{
+        width: 100%;
+        padding: 10px 25px;
+        // position: relative;
+        position: absolute;
+        bottom: 0;
+        border: 1px solid #662d65;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .smileyIcon{
+            position: absolute;
+            z-index: 1;
+            bottom: 15px;
+            left: 15px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .emojiContainer{
+            position: absolute;
+            bottom: 50px;
+            left: -100px;
+        }
+    }
+    .messageField{
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        width: calc(100% - 50px);
+        height: unset;
+        &:focus{
+            outline: none;
+        }
+    }
+    .sendIcon{
+        position: absolute;
+        z-index: 1;
+        bottom: 15px;
+        right: 15px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+}
+
+.active_users{
+    // display: none;
+    p{
+        cursor: pointer;
+        position: relative;
+        &:hover{
+            background-color: rgba($color: #000000, $alpha: 0.3);
+            &::after{
+                position: absolute;
+                content: "chat with client";
+                border: 1px solid grey;
+                background-color: grey;
+                padding: 5px;
+                color: white;
+                border-radius: 10px;
+                border-bottom-left-radius: 0px;
+                top: -35px;
+                right: -55px;
+                width: 60px;
+                font-size: x-small;
+            }
+        }
+        &.current_chat_with{
+            background-color: #34ad39;
+            color: white;
+            background-color: rgba($color: #000000, $alpha: 0.3);
+            color: black;
+        }
+        &.admin_user{
+            cursor: not-allowed;
+            &:hover{
+                background-color: none;
+                opacity: 0.4;
+                &::after{
+                    content: '';
+                    padding: 0;
+                    background-color: none;
+                    border: none;
+                }
+            }
+        }
+    }
+}

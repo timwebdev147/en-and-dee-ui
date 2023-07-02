@@ -1,3 +1,6 @@
 /node_modules
-/ui
 /api
+/socket
+/package.json
+/package-lock.json
+/env

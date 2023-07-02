@@ -1,0 +1,151 @@
+@use './mediaQueries.modules.scss';
+ /* define primary colors */
+ $primary_1: white;
+ $primary_2: #b2ad7f;
+ $text_color: #E92626;
+ $primary_3: #687d80;
+  $green: #4cb034;
+  $greenFade: #4db03445;
+
+.firstBG{
+    width: 100%;
+    height: 600px;
+    background-image: url('../public/images/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    @include mediaQueries.for-phone-only{
+        height: 400px;
+    }
+    div:first-of-type{
+        width: 500px;
+        margin-left: 100px;
+        @include mediaQueries.for-phone-only{
+            margin: 0;
+            
+        }
+        p{
+            font-size: 40px;
+            @include mediaQueries.for-phone-only{
+                font-size: 20px;
+                width: 250px;
+                margin-left: 20px;
+            }
+        }
+        small{
+            font-weight: bold;
+            opacity: 0.6;
+            font-size: 12px;
+            margin-left: 20px;
+        }
+    }
+    div:nth-of-type(2){
+        position: absolute;
+        bottom: 150px;
+        left: 40%;
+        @include mediaQueries.for-phone-only{
+            bottom: 20px;
+            width: 100%;
+            left: initial;
+            display: flex;
+            justify-content: center;
+        }
+        a:first-of-type{
+            padding: 20px 25px;
+            text-transform: capitalize;
+            font-size: medium;
+            color: white;
+            background-color: $text_color;
+            border: 1px solid $text_color;
+            border-radius: 40px;
+            margin-right: 20px;
+            @include mediaQueries.for-phone-only{
+                padding: 10px 15px;
+                text-transform: capitalize;
+                font-size: small;
+                color: white;
+                background-color: $green;
+                border: 1px solid $green;
+                border-radius: 40px;
+                margin-right: 20px;
+            }
+        }
+        a:nth-of-type(2){
+            padding: 20px 25px;
+            text-transform: capitalize;
+            font-size: medium;
+            color: $text_color;
+            background-color: white;
+            border: 1px solid $text_color;
+            border-radius: 40px;
+            margin-right: 20px;
+            @include mediaQueries.for-phone-only{
+                padding: 10px 15px;
+                text-transform: capitalize;
+                font-size: small;
+                color: $green;
+                background-color: white;
+                border: 1px solid $green;
+                border-radius: 40px;
+                margin-right: 20px;
+            }
+        }
+    }
+
+}
+
+.secondBG{
+    display: none;
+    @include mediaQueries.for-phone-only{
+        padding-top: 10px;
+        padding: 20px 20px;
+    }
+    >h1{
+
+        @include mediaQueries.for-phone-only{
+            font-size: 35px;
+            padding-top: 0;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.81);
+            margin-bottom: 20px;
+        }
+    }
+    .card{
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        // padding: 0 120px;
+        width: 100%;
+        img{
+            width: 50%;
+            border-radius: 50px;
+            @include mediaQueries.for-phone-only{
+                width: 100%;
+                border-radius: 10px;
+            }
+        }
+
+        div{
+            width: 30%;
+            h1{ 
+                font-weight: 700;
+                font-size: 35px;
+                @include mediaQueries.for-phone-only{
+                    font-size: 30px;
+                    line-height: 1.3;
+                    color: rgba(0, 0, 0, 0.81);
+                    width: 250px;
+                    font-weight: 600;
+                    margin: auto;
+                    text-align: center;
+                }
+            }
+
+        }
+
+    }
+}

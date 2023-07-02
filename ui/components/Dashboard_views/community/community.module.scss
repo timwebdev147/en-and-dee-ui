@@ -1,0 +1,68 @@
+
+.prompt{
+    padding-top: 100px;
+    select{
+        // margin: auto;
+        margin-top: 100px;
+        background-color: #34ad39;
+        padding: 10px;
+        border-radius: 5px;
+        option{
+            background-color: #2a8d2e;
+        }
+    }
+        
+    button{
+        background-color: #34ad39;
+        padding: 10px;
+        border-radius: 10px;
+        color: black;
+        text-transform: capitalize;
+        position: absolute;
+        bottom: 45%;
+    }
+}
+.communityBox{
+height: 100vh;
+display: flex;
+width: 100%;
+
+.community{
+    width: 70%;
+}
+.chatSideBar{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    border-right: 0.1px solid rgba(128, 128, 128, 0.521);
+    box-shadow: 0px 3px 10px 1px rgb(128, 128, 128, 0.521);
+    height: 100%;
+    background-color: #fae5e5;
+    .com_icon{
+        margin-right: 10px;
+    }
+    label{
+        display: flex;
+        align-items: baseline;
+        font-size: larger;
+    }
+    .community_name{
+        padding-top: 20px;
+        p{
+            background-color: #662d65;
+            color: white;
+            padding: 5px 5px;
+            
+        }
+    }
+    .active_members{
+        padding-top: 20px;
+        p{
+            border-bottom: 1px solid #34ad39;
+            padding: 5px 5px;
+            
+        }
+    }
+}
+}
