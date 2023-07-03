@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./blog.module.scss"
+import LinesEllipsis from 'react-lines-ellipsis';
 
 function Blog(params) {
     
 const [posts, setPosts] = useState()
+const [truncated, setTruncated] = useState(true);
 
 const api_url = process.env.NEXT_PUBLIC_API_URL;
 const ws_url = process.env.NEXT_PUBLIC_WS_URL;
@@ -36,6 +38,10 @@ useEffect(() => {
         <>
 
         <div className={styles.blogContainer}>
+            <h1>Blog Posts</h1>
+            <div>
+
+            
             {
                 posts?.map((post, index) => {
                     let base64String =  ''
@@ -52,13 +58,18 @@ useEffect(() => {
                     // )
                     return(
                     <div className={styles.blogPost} key={index}>
-                        <h1>{post.title}</h1>
                         <img src={`data:image/jpeg;base64,${converted}`} alt="" />
-                        <p>{post.image.src}</p>
-                        <p>{post.body}</p>
+                        <h1>{post.title}</h1>
+                        {truncated ? <LinesEllipsis
+                            text={post.body}
+                            maxLine='3'
+                            ellipsis={<>... <button onClick={() => setTruncated(!truncated)}>Read More</button></>}
+                            basedOn='words'
+                        /> : <div>{post.body} <button onClick={() => setTruncated(!truncated)}>Less</button></div>}
                     </div>)
 })
             }
+            </div>
         </div>
         </>
     )

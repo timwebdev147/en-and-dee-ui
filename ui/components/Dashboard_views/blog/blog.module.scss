@@ -2,5 +2,50 @@
 
 .blogContainer{
     height: 100%;
+    width: 100%;
     overflow-y: scroll;
+    padding: 20px;
+    padding-left: 30px;
+    h1{
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 50px;
+    }
+    >div{
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        .blogPost{
+            // border: 1px solid black;
+            width: 48%;
+            min-height: 400px;
+            margin-right: auto;
+            margin-bottom: 40px;
+            img{
+                width: 100%;
+                height: 200px;
+                object-fit: contain;
+            }
+            h1{
+                font-size: 22px;
+                text-transform: capitalize;
+                font-weight: 600;
+            }
+            p{
+                font-weight: 600;
+                opacity: 0.7;
+                font-family: Inter;
+                font-weight: 500;
+                letter-spacing: 0em;
+                // line-height: 12px;
+                text-align: left;
+                height: auto;
+                word-break: break-all;
+                cursor: default;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis
+            }
+        }
+    }
 }
