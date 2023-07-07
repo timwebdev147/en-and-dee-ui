@@ -1,5 +1,5 @@
 /node_modules
-/api
+# /api
 /socket
 /package.json
 /package-lock.json
