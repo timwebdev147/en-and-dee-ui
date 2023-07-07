@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./blog.module.scss"
+import logo from "../../../public/images/logo.png"
 import LinesEllipsis from 'react-lines-ellipsis';
+import Image from "next/image";
+import ClampLines from 'react-clamp-lines';
 
 function Blog(params) {
     
@@ -58,14 +61,24 @@ useEffect(() => {
                     // )
                     return(
                     <div className={styles.blogPost} key={index}>
-                        <img src={`data:image/jpeg;base64,${converted}`} alt="" />
+                        <div className={styles.logoContainer}>
+                            <Image width={0} height={0} src={logo} alt="" />
+                            <span>Diet Bar</span> 
+                        </div>
                         <h1>{post.title}</h1>
-                        {truncated ? <LinesEllipsis
-                            text={post.body}
-                            maxLine='3'
-                            ellipsis={<>... <button onClick={() => setTruncated(!truncated)}>Read More</button></>}
-                            basedOn='words'
-                        /> : <div>{post.body} <button onClick={() => setTruncated(!truncated)}>Less</button></div>}
+                        <img src={`data:image/jpeg;base64,${converted}`} alt="" />
+                        <div class={styles.mydiv}>
+                                <ClampLines
+                                    text={post.body}
+                                    id="really-unique-id"
+                                    lines={4}
+                                    ellipsis="..."
+                                    moreText="Read more"
+                                    lessText="Collapse"
+                                    className="custom-class"
+                                    innerElement="p"
+                                />
+                        </div>
                     </div>)
 })
             }

@@ -70,12 +70,12 @@ const signIn = async (req, res) => {
            const token = jwt.sign(
               { _id: user._id, role: user.role },
               process.env.JWT_SECRET,{ expiresIn: "30d"});
-  const { _id, firstName, lastName, email, role, fullName, username, age, weight, height } = user;
+  const { _id, firstName, lastName, email, role, fullName, username, gender, age, weight, height, occupation, tribe, religion, medical_condition } = user;
   
   req.token = token;
   res.status(StatusCodes.OK).json({
        token,
-       user: { _id, firstName, lastName, email, role, fullName, username, age, weight, height },
+       user: { _id, firstName, lastName, email, role, fullName, username, gender, age, weight, height, occupation, tribe, religion, medical_condition },
   });
  } else {
   res.status(StatusCodes.UNAUTHORIZED).json({

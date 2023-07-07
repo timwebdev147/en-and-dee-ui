@@ -22,7 +22,7 @@ const {
 const { decode } = require("../middlewares/jwt");
 const { newConversation } = require("../controller/PrivateChatMessages");
 const { upload } = require("../middlewares/multer");
-const { uploadPost, getPost } = require("../controller/blogPost");
+const { uploadPost, getPost, getSinglePost } = require("../controller/blogPost");
 
 
 //user routes
@@ -47,6 +47,7 @@ router.route("/chatroom/message/:roomId").get( decode ,getMessage);
 //blog post
 router.route("/blog/post").post(upload.single("file"), uploadPost)
 router.route("/blog/post").get( getPost)
+router.route("/blog/post/:id").get( getSinglePost)
 
 //delete routes
 router.route("/delete/message/:messageId").delete(decode, deleteMessageById)

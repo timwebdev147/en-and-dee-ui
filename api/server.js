@@ -21,6 +21,7 @@ const uuidv4 = require('uuid').v4;
  
  //parse requests of  content-type - application/x-www-form-urlencoded
  app.use(express.urlencoded({extended: true}))
+
  app.use("/api", authRouter);
  app.use('*', (req, res) => {
     return res.status(404).json({

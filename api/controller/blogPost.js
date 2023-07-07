@@ -23,5 +23,12 @@ const getPost = async (req, res) => {
     res.status(200).json(posts)
 }
 
+const getSinglePost = async (req, res) => {
+    const post = await BlogPost.findById(req.params.id)
+    if (!post) {
+        return res.status(404).json({msg: `Post with ID: ${id} was not found`})
+    };
+    res.status(200).json(post)
+}
 
-module.exports = {uploadPost, getPost};
+module.exports = {uploadPost, getPost, getSinglePost};

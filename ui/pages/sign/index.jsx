@@ -9,7 +9,7 @@ import { useState } from "react";
 
 function signUp(){
     const [file, setFile] = useState()
-    const api_url = process.env.REACT_APP_API_URL;
+    const api_url = process.env.NEXT_PUBLIC_API_URL;
     const ws_url = process.env.REACT_APP_WS_URL;
     
     const form = [
@@ -93,7 +93,7 @@ function signUp(){
             key: "file",
             type: 'file',
             class: 'halfwidth',
-            value: file
+            value: ''
         },
         {
             name: "occupation",
@@ -142,9 +142,10 @@ function signUp(){
 
     function submit(e){
         e.preventDefault()
-        let userData = new FormData();
-        formfields.forEach(field => {
-                userData.append(`${field.key}`, `${field.value}`)
+        let userData = {};
+        formFields.forEach(field => {
+            userData[field.name] = field.value
+            
         })
         
         const config = {
@@ -203,7 +204,7 @@ function signUp(){
                     {/* <p>please fill in every field*</p> */}
                     {
                         form.map((field, index) => (
-                            <div className={styles[field.class]}>
+                            <div key={index} className={styles[field.class]}>
                                 <div>
 
                                 <label htmlFor="">{field.label} <span>*</span></label>
@@ -213,6 +214,11 @@ function signUp(){
                                     <input  
                                     type={field.type} 
                                     onChange={event => handleChange(event.target.value, index)} />:
+                                    field.type == "file"?
+                                    <input  
+                                    type={field.type} 
+                                    onChange={event => handleFileChange(event)} />
+                                    :
                                     <select className={styles[field.class]} name="" id="">
                                         {
                                             field.options.map((option, index) => (
