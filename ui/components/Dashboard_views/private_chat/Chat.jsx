@@ -48,7 +48,7 @@ function Chat(params) {
     //connect and get new messages from the socket
     useEffect(() => {
         //connect to socket
-        socket.current = io('ws://localhost:7000');
+        socket.current = io(ws_url);
         //get new messages from the socket
         
 
