@@ -48,7 +48,7 @@ function Chat(params) {
     //connect and get new messages from the socket
     useEffect(() => {
         //connect to socket
-        socket.current = io(ws_url);
+        socket.current = io(`${ws_url}`);
         //get new messages from the socket
         
 
@@ -121,7 +121,7 @@ function Chat(params) {
                 socket.current.emit("joinRoom", res.data.savedConvo._id)
             }
             console.log("private Chatroom",  res.data);
-            console.log("client name",  chatWithName);
+            console.log("client name",  clientName);
         }).catch(error => {
             console.log(error);
         })
@@ -240,6 +240,7 @@ function Chat(params) {
                 text: data.text,
                 createdAt: Date.now()
             })
+            console.log(data);
         })
     }, [socket, chatStatus, messages])
     // initiate chat with admin

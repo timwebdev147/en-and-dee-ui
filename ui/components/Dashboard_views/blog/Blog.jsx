@@ -25,8 +25,8 @@ function getposts(params) {
                 'Authorization': `token ${window.localStorage.getItem('token')}`
             }
         }).then(res => {
-            console.log("blog posts",res.data.result.data);
-            setPosts(res.data.result.data)
+            console.log("blog posts",res.data);
+            setPosts(res.data)
         }).catch(err => {
             console.log(err);
         })
